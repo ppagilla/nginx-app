@@ -1,0 +1,12 @@
+#!/bin/bash
+yum update -y 
+yum install -y httpd php git
+service httpd start
+
+git clone https://github.com/rohitmalik21/aws-dec2022
+
+cd aws-dec2022/ 
+cp * /var/www/html 
+mv /var/www/html/htaccess /var/www/html/.htaccess
+service httpd start 
+service httpd restart 
